@@ -10,7 +10,7 @@ var uuid    = require('node-uuid');
 var app = express.createServer(
   express.logger(),
   express.cookieParser(),
-  express.session({ secret: process.env.SECRET }),
+  express.session({ secret: process.env.SECRET || 'secret' }),
   require('connect-form')({ keepExtensions: true })
 );
 
